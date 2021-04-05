@@ -1,0 +1,94 @@
+<ng-container *ngIf="status==''; else iniciadoBlock">
+    <h1>I - Finalidade</h1>
+
+    <p>Regulamentar a prova de Duelo 20 Segundos no âmbito da Confederação Brasileira de Tiro Esportivo e de suas Filiadas.</p>
+
+    <h1>II - Descrição da Prova</h1>
+
+    <ul>
+        <li>Distância<br/>
+            25 (Vinte e cinco) metros.
+        </li>
+        <li>Alvo<br/>
+            De Tiro Rápido com uma obréia branca de 5 (cinco) cm de diâmetro no centro.
+        </li>
+        <li> 
+            Posição<br/>
+            De pé sem nenhum tipo de apoio.
+        </li>
+        <li>
+            Empunhadura<br/>
+            Com uma ou duas mãos, a critério do atleta.
+        </li>
+        <li>
+            Ensaio<br/>
+            Não haverá ensaio.
+        </li>
+        <li>
+            Prova<br/>
+            20 (vinte) disparos distribuídos em 4 (quatro) séries de 20 (vinte) segundos.
+        </li>
+
+        <li>
+            Comandos<br/>
+            a. "Seu tempo de 1 minuto de preparação começa a partir de agora";<br/>
+            b. “Para a primeira série, carregar”;<br/>
+            c. “Atenção”<br/>
+            <ul>
+                <li>
+                    Após o comando “atenção”, as armas deverão ser empunhadas com uma ou duas mãos e apontadas para o solo
+                    e fazendo um ângulo não superior a 45º (quarenta e cinco graus) com a vertical;
+                </li>
+                <li>
+                    Os alvos serão fechados, reabrindo após 7 (sete) segundos, permanecendo abertos durante 20 (vinte) 
+                    segundos, tempo em que deverão ser realizados os disparos;
+                </li>
+                <li>
+                    Encerrada a série, haverá tempo de 40 (quarenta) segundos para recarregar (não haverá novos comandos de
+                    “carregar”). A cada nova série haverá o comando “atenção”.
+                </li>
+            </ul>
+            d. O comando de “descarregar” poderá ser dado a qualquer momento que for necessário;<br/> 
+            e. Ao final da prova será dado o comando “Prova encerrada - armas em segurança”.<br/> 
+            <ul>
+                <li>
+                    “Armas em segurança” significa: abertas e descarregadas sobre a bancada (com a utilização de safety flag 
+                    ou fio de cor viva em sua câmara) ou em seus invólucros;
+                </li> 
+                <li>Não é permitido o municiamento durante o tempo de preparação;</li> 
+                <li>Não será permitido o manuseio de armas e munições enquanto a pista estiver em segurança.</li>
+            </ul>
+        </li>   
+    </ul>
+    <div style="text-align: center; padding: 2px;">
+        <button mat-raised-button color="primary" (click)="iniciarPreparacao()">Iniciar Preparação</button>
+    </div>
+    <br />
+</ng-container>
+<ng-template #iniciadoBlock>
+    <section>
+        <h1>Tempo</h1>    
+        <div class="button-container">
+            <button mat-fab color="warn" aria-label="Contagem Regressiva" (click)="zerarTempo()">
+                <div class="xlarge-font">{{tempo}}</div>    
+            </button>
+        </div>
+    </section>
+    <mat-divider></mat-divider>
+    <section>
+        <h1>Instruções</h1>    
+        <h2>{{output}}</h2>
+    </section>
+    <mat-divider></mat-divider>
+    <section>
+        <div class="button-container">
+            <button mat-raised-button color="primary" (click)="iniciarAtencao()" *ngIf="status=='atencao'">Iniciar Atenção</button>
+            <button mat-raised-button color="primary" (click)="iniciarSerie()" *ngIf="status=='serie'">Iniciar Série</button>
+            <button mat-raised-button color="primary" (click)="iniciarIntervalo()" *ngIf="status=='intervalo'">Intervalo Série</button>
+        </div>
+    </section>
+    
+</ng-template>
+
+
+
