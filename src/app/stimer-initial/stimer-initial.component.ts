@@ -7,6 +7,14 @@ import { Component } from '@angular/core';
   })
   export class StimerInitialComponent {
     
-    constructor() {}
+    texto:string = '';
+
+    constructor(
+      
+    ) {}
+
+    naoFazNadaNao() {
+      this.texto = 'Faz nada não, meu querido, é só um demo';
+    }
   
   }
