@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1617833797638,
+  "timestamp": 1617835338328,
   "index": "https://mmartinho.github.io/shootingtimer/index.html",
   "assetGroups": [
     {
@@ -43,14 +43,14 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://mmartinho.github.io/shootingtimer/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
-    "https://mmartinho.github.io/shootingtimer/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
-    "https://mmartinho.github.io/shootingtimer/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
-    "https://mmartinho.github.io/shootingtimer/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
-    "https://mmartinho.github.io/shootingtimer/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "https://mmartinho.github.io/shootingtimer/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "https://mmartinho.github.io/shootingtimer/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
-    "https://mmartinho.github.io/shootingtimer/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://mmartinho.github.io/shootingtimer/assets/icons/icon-128x128.png": "9ecfc146b3f651e7fad8f57f2d1b9a395783aa09",
+    "https://mmartinho.github.io/shootingtimer/assets/icons/icon-144x144.png": "9b5e871f370fbd1cea2efd1b977617e0027bf105",
+    "https://mmartinho.github.io/shootingtimer/assets/icons/icon-152x152.png": "73d4168e9a1a8f42e99fc1103f734ec476697861",
+    "https://mmartinho.github.io/shootingtimer/assets/icons/icon-192x192.png": "473bc3d07047cc23ad05b4d8967f3f22d8000d4f",
+    "https://mmartinho.github.io/shootingtimer/assets/icons/icon-384x384.png": "0151664cdf8fae577346324d38aedfe58027e144",
+    "https://mmartinho.github.io/shootingtimer/assets/icons/icon-512x512.png": "3fc24ea7a8e2b6bee2b89881730d43b048f4795c",
+    "https://mmartinho.github.io/shootingtimer/assets/icons/icon-72x72.png": "ea3c35196a850aff79be215fcd7ab19526967990",
+    "https://mmartinho.github.io/shootingtimer/assets/icons/icon-96x96.png": "9c6bea7b07b0a15c0b3e90dca57961c2ef528377",
     "https://mmartinho.github.io/shootingtimer/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "https://mmartinho.github.io/shootingtimer/index.html": "baeff27744b75144fbe6ccbbd9c91e9749de9618",
     "https://mmartinho.github.io/shootingtimer/main.f99547e3a938a43592a4.js": "c8b39259a0a40c9729a8c494ee0d86837e6264ff",
