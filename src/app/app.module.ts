@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { StimerInitialComponent } from './stimer-initial/stimer-initial.componen
 import { StimerDuelo20sComponent } from './stimer-duelo20s/stimer-duelo20s.component';
 import { StimerPageNotFoundComponent } from './stimer-page-not-found/stimer-page-not-found.component';
 import { StimerAboutComponent } from './stimer-about/stimer-about.component';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,13 @@ import { StimerAboutComponent } from './stimer-about/stimer-about.component';
     MatIconModule,
     MatListModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
