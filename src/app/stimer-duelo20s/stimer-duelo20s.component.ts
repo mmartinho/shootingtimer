@@ -25,6 +25,7 @@ export class StimerDuelo20sComponent implements OnInit {
   serie_atual: number = 0;
 
   timer!: Observable<any>;
+  whatcher!: Subscription;
 
   constructor() { }
 
@@ -36,13 +37,13 @@ export class StimerDuelo20sComponent implements OnInit {
     this.status = 'iniciar-preparacao';
     this.output = this.texto[0];
     this.tempo = this.tempoPreparacao;
-    const tempoPreparacao = this.timer.subscribe(val => {
+    this.whatcher  = this.timer.subscribe(val => {
       if(this.tempo != 0) { 
         this.tempo = this.tempoPreparacao - val;
       } else {
         this.status = 'atencao';
         this.output = this.texto[1];
-        tempoPreparacao.unsubscribe();
+        this.whatcher.unsubscribe();
       }
     });
   }
@@ -51,12 +52,12 @@ export class StimerDuelo20sComponent implements OnInit {
     this.status = 'atencao-iniciada';
     this.output = this.texto[2];
     this.tempo = this.tempoAtencao;
-    const tempoAtencao = this.timer.subscribe(val => {
+    this.whatcher = this.timer.subscribe(val => {
       if(this.tempo != 0) { 
         this.tempo = this.tempoAtencao - val;
       } else {
         this.status = 'serie';
-        tempoAtencao.unsubscribe();
+        this.whatcher.unsubscribe();
       }
     });    
   }
@@ -66,7 +67,7 @@ export class StimerDuelo20sComponent implements OnInit {
     this.status = 'serie-iniciada';
     this.output = 'Série '+this.serie_atual+' iniciada';
     this.tempo = this.tempoProva;
-    const tempoProva = this.timer.subscribe(val => {
+    this.whatcher = this.timer.subscribe(val => {
       if(this.tempo != 0) { 
         this.tempo = this.tempoProva - val;
       } else {
@@ -76,7 +77,7 @@ export class StimerDuelo20sComponent implements OnInit {
         } else {
           this.status = 'intervalo';
         }
-        tempoProva.unsubscribe();
+        this.whatcher.unsubscribe();
       }
     });
   }
@@ -85,18 +86,25 @@ export class StimerDuelo20sComponent implements OnInit {
     this.status = 'intervalo-iniciado';
     this.output = 'Intervalo pós série '+this.serie_atual;
     this.tempo = this.tempoIntervalo;
-    const tempoIntervalo = this.timer.subscribe(val => {
+    this.whatcher = this.timer.subscribe(val => {
       if(this.tempo != 0) { 
         this.tempo = this.tempoIntervalo - val;
       } else {
         this.status = 'serie';
-        tempoIntervalo.unsubscribe();
+        this.whatcher.unsubscribe();
       }
     });     
   }
 
-  zerarTempo() : void {
+  parar() : void {
+    this.whatcher.unsubscribe();
     this.tempo = 0;
+    this.status = '';
+    this.output = '';
+    this.serie_atual = 0;
   }
 
+  pausar(): void {
+    this.tempo = 0;
+  }
 }

@@ -66,17 +66,15 @@
     <br />
 </ng-container>
 <ng-template #iniciadoBlock>
-    <section>
-        <h1>Tempo</h1>    
+    <section>   
         <div class="button-container">
-            <button mat-fab color="warn" aria-label="Contagem Regressiva" (click)="zerarTempo()">
+            <button mat-fab color="warn" aria-label="Contagem Regressiva" (click)="pausar()">
                 <div class="xlarge-font">{{tempo}}</div>    
             </button>
         </div>
     </section>
     <mat-divider></mat-divider>
-    <section>
-        <h1>Instruções</h1>    
+    <section>    
         <h2>{{output}}</h2>
     </section>
     <mat-divider></mat-divider>
@@ -85,7 +83,13 @@
             <button mat-raised-button color="primary" (click)="iniciarAtencao()" *ngIf="status=='atencao'">Iniciar Atenção</button>
             <button mat-raised-button color="primary" (click)="iniciarSerie()" *ngIf="status=='serie'">Iniciar Série</button>
             <button mat-raised-button color="primary" (click)="iniciarIntervalo()" *ngIf="status=='intervalo'">Intervalo Série</button>
+            <button mat-raised-button color="accent" (click)="parar()" *ngIf="status!=''">Parar</button>
         </div>
+    </section>
+    <mat-divider></mat-divider>
+    <section>
+        <p>Pausar a Sequência e Zerar o Timer: Pressione o Botão redondo Laranja</p>
+        <p *ngIf="status!=''">Parar tudo e reiniciar: Pressione o Botão Salmão</p>
     </section>
     
 </ng-template>
