@@ -5,15 +5,15 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#" [routerLink]="['p','initial']">
+      <a mat-list-item href="#" [routerLink]="['p','initial']" (click)="drawer.close()">
           <mat-icon aria-hidden="false" aria-label="Página de boas vindas">home</mat-icon>
           Home
       </a>
-      <a mat-list-item href="#" [routerLink]="['p','duelo20s']">
+      <a mat-list-item href="#" [routerLink]="['p','duelo20s']" (click)="drawer.close()">
         <mat-icon aria-hidden="false" aria-label="Duelo 20s">timer</mat-icon>
         Duelo 20s
       </a>
-      <a mat-list-item href="#" [routerLink]="['p','sobre']">
+      <a mat-list-item href="#" [routerLink]="['p','sobre']" (click)="drawer.close()">
         <mat-icon aria-hidden="false" aria-label="Sobre">contact_support</mat-icon>
         Sobre
       </a>
@@ -21,12 +21,7 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>Shooting Timer</span>
