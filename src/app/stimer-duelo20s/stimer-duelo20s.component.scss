@@ -10,10 +10,18 @@
     font-size: xx-large;
 }
 
-.float {
+.float-right {
     position: fixed;
     bottom: 2rem;
     right: 10rem;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.float-left {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
     width: 1.5em;
     height: 1.5em;
 }

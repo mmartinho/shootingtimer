@@ -20,6 +20,8 @@ export class StimerDuelo20sComponent implements OnInit {
   numeroSeries: number = 4;
 
   tempo : number = 0;
+  tempoTotal : number = 0;
+  split: number = 0;
   status: string = '';
   output: string = '';
   serie_atual: number = 0;
@@ -27,13 +29,20 @@ export class StimerDuelo20sComponent implements OnInit {
   timer!: Observable<any>;
   whatcher!: Subscription;
 
+  timeSpliter!: Observable<any>;
+  whatcherSpliter!: Subscription;
+
+  interativo: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
     this.timer = timer(0, 1000);
+    this.timeSpliter = timer(0, 1000);
   }
 
   iniciarPreparacao(): void {
+    this.interativo = true;
     this.status = 'iniciar-preparacao';
     this.output = this.texto[0];
     this.tempo = this.tempoPreparacao;
@@ -106,5 +115,104 @@ export class StimerDuelo20sComponent implements OnInit {
 
   pausar(): void {
     this.tempo = 0;
+  }
+
+  iniciarTudo() {
+    this.interativo = false;
+    /**
+     * Soma todos os tempos
+     */
+    this.tempoTotal =
+      this.tempoPreparacao +
+      this.tempoAtencao +
+      this.numeroSeries*this.tempoProva + 
+      (this.numeroSeries-1)*this.tempoIntervalo;
+
+    this.tempo = this.tempoTotal;
+    this.status='iniciou-tudo';
+    this.output = this.texto[0];
+    
+    this.whatcher = this.timer.subscribe(val => {
+      this.tempo = this.tempoTotal - val;
+      switch(this.tempo) { 
+        case this.tempoTotal : { 
+          this.output = this.texto[0]; // Seu tempo de 1 minuto de preparação começa a partir de agora
+          this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoPreparacao - time });
+          break; 
+        } 
+        case this.tempoTotal - this.tempoPreparacao : {
+          this.whatcherSpliter.unsubscribe();
+          this.output = this.texto[1]; // para primeira série, carregar
+          this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoAtencao - time });
+          break; 
+        } 
+        case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao: {
+          this.whatcherSpliter.unsubscribe();
+          this.output = 'Série 1 iniciada';
+          this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoProva - time });
+          break;
+        }          
+        case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 1*this.tempoProva: {
+          this.whatcherSpliter.unsubscribe();
+          this.output = 'Série 1 finalizada';
+          this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoIntervalo - time });
+          break;
+        }
+        case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 1*this.tempoProva - 1*this.tempoIntervalo: {
+          this.whatcherSpliter.unsubscribe(); 
+          this.output = 'Série 2 iniciada';
+          this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoProva - time });
+          break;
+        }
+        case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 2*this.tempoProva - 1*this.tempoIntervalo: {
+          this.whatcherSpliter.unsubscribe(); 
+          this.output = 'Série 2 finalizada';
+          this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoIntervalo - time });
+          break;
+        } 
+        case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 2*this.tempoProva - 2*this.tempoIntervalo: { 
+          this.whatcherSpliter.unsubscribe();
+          this.output = 'Série 3 iniciada';
+          this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoProva - time });
+          break;
+        }  
+        case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 3*this.tempoProva - 2*this.tempoIntervalo: {
+          this.whatcherSpliter.unsubscribe();
+          this.output = 'Série 3 finalizada';
+          this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoIntervalo - time });
+          break;
+        } 
+        case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 3*this.tempoProva - 3*this.tempoIntervalo: { 
+          this.whatcherSpliter.unsubscribe();
+          this.output = 'Série 4 iniciada';
+          this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoProva - time });
+          break;
+        }   
+        case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 4*this.tempoProva - 3*this.tempoIntervalo: {
+          this.whatcherSpliter.unsubscribe(); 
+          this.output = this.texto[3]; // prova encerrada, armas em segurança
+          this.status = 'prova-finalizada';
+          this.whatcher.unsubscribe(); 
+          this.split = 0;           
+          break;
+        }
+        case 0 : {
+          break;
+        }                                              
+        default: {  
+            break; 
+        } 
+      } 
+    });     
+  }
+
+  pararTudo() {
+    this.whatcherSpliter.unsubscribe(); 
+    this.tempoTotal = 0;
+    this.output = '';
+    this.status = '';
+    this.whatcher.unsubscribe();
+    this.split = 0;
+    this.interativo = true;
   }
 }

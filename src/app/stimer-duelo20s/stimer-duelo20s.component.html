@@ -60,38 +60,66 @@
             </ul>
         </li>   
     </ul>
-    <div class="float">
-        <button mat-raised-button color="primary" (click)="iniciarPreparacao()">Iniciar Preparação</button>
+    <div class="float-right">
+        <button mat-raised-button color="accent" (click)="iniciarTudo()">Iniciar Automático</button>
+    </div>
+    <div class="float-left">
+        <button mat-raised-button color="primary" (click)="iniciarPreparacao()">Iniciar Interativo</button>
     </div>
     <br />
 </ng-container>
+
 <ng-template #iniciadoBlock>
+    <ng-container *ngIf="interativo; else automaticoBlock">
+        <section>   
+            <div class="button-container">
+                <button mat-fab color="warn" aria-label="Contagem Regressiva" (click)="pausar()">
+                    <div class="xlarge-font">{{tempo}}</div>    
+                </button>
+            </div>
+        </section>
+        <mat-divider></mat-divider>
+        <section>    
+            <h2>{{output}}</h2>
+        </section>
+        <mat-divider></mat-divider>
+        <section>
+            <div class="button-container">
+                <button mat-raised-button color="primary" (click)="iniciarAtencao()" *ngIf="status=='atencao'">Iniciar Atenção</button>
+                <button mat-raised-button color="primary" (click)="iniciarSerie()" *ngIf="status=='serie'">Iniciar Série</button>
+                <button mat-raised-button color="primary" (click)="iniciarIntervalo()" *ngIf="status=='intervalo'">Intervalo Série</button>
+                <button mat-raised-button color="accent" (click)="parar()" *ngIf="status!=''">Parar</button>
+            </div>
+        </section>
+        <mat-divider></mat-divider>
+        <section>
+            <p>Pausar a Sequência e Zerar o Timer: Pressione o Botão redondo Laranja</p>
+            <p *ngIf="status!=''">Parar tudo e reiniciar: Pressione o Botão Salmão</p>
+        </section>
+    </ng-container>    
+</ng-template>
+<ng-template #automaticoBlock>
     <section>   
         <div class="button-container">
-            <button mat-fab color="warn" aria-label="Contagem Regressiva" (click)="pausar()">
-                <div class="xlarge-font">{{tempo}}</div>    
+            <button mat-fab color="warn" aria-label="Contagem">
+                <div class="xlarge-font">{{split}}</div>    
             </button>
         </div>
-    </section>
-    <mat-divider></mat-divider>
+    </section> 
+    <mat-divider></mat-divider>   
     <section>    
         <h2>{{output}}</h2>
     </section>
     <mat-divider></mat-divider>
     <section>
         <div class="button-container">
-            <button mat-raised-button color="primary" (click)="iniciarAtencao()" *ngIf="status=='atencao'">Iniciar Atenção</button>
-            <button mat-raised-button color="primary" (click)="iniciarSerie()" *ngIf="status=='serie'">Iniciar Série</button>
-            <button mat-raised-button color="primary" (click)="iniciarIntervalo()" *ngIf="status=='intervalo'">Intervalo Série</button>
-            <button mat-raised-button color="accent" (click)="parar()" *ngIf="status!=''">Parar</button>
+            <button mat-raised-button color="accent" (click)="pararTudo()" *ngIf="status!=''">Parar</button>
         </div>
-    </section>
+    </section> 
     <mat-divider></mat-divider>
     <section>
-        <p>Pausar a Sequência e Zerar o Timer: Pressione o Botão redondo Laranja</p>
         <p *ngIf="status!=''">Parar tudo e reiniciar: Pressione o Botão Salmão</p>
-    </section>
-    
+    </section>       
 </ng-template>
 
 
