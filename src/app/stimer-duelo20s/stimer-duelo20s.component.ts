@@ -136,61 +136,62 @@ export class StimerDuelo20sComponent implements OnInit {
       this.tempo = this.tempoTotal - val;
       switch(this.tempo) { 
         case this.tempoTotal : { 
-          this.output = this.texto[0]; // Seu tempo de 1 minuto de preparação começa a partir de agora
+          this.output = this.texto[0]; this.falar();
           this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoPreparacao - time });
           break; 
         } 
         case this.tempoTotal - this.tempoPreparacao : {
           this.whatcherSpliter.unsubscribe();
-          this.output = this.texto[1]; // para primeira série, carregar
+          this.output = this.texto[1]; 
+          this.falar(); 
           this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoAtencao - time });
           break; 
         } 
         case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao: {
           this.whatcherSpliter.unsubscribe();
-          this.output = 'Série 1 iniciada';
+          this.output = 'Primeira série iniciada'; this.falar();
           this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoProva - time });
           break;
         }          
         case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 1*this.tempoProva: {
           this.whatcherSpliter.unsubscribe();
-          this.output = 'Série 1 finalizada';
+          this.output = 'Primeira série finalizada'; this.falar();
           this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoIntervalo - time });
           break;
         }
         case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 1*this.tempoProva - 1*this.tempoIntervalo: {
           this.whatcherSpliter.unsubscribe(); 
-          this.output = 'Série 2 iniciada';
+          this.output = 'Segunda série iniciada'; this.falar();
           this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoProva - time });
           break;
         }
         case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 2*this.tempoProva - 1*this.tempoIntervalo: {
           this.whatcherSpliter.unsubscribe(); 
-          this.output = 'Série 2 finalizada';
+          this.output = 'Segunda série finalizada'; this.falar();
           this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoIntervalo - time });
           break;
         } 
         case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 2*this.tempoProva - 2*this.tempoIntervalo: { 
           this.whatcherSpliter.unsubscribe();
-          this.output = 'Série 3 iniciada';
+          this.output = 'Terceira série iniciada'; this.falar();
           this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoProva - time });
           break;
         }  
         case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 3*this.tempoProva - 2*this.tempoIntervalo: {
           this.whatcherSpliter.unsubscribe();
-          this.output = 'Série 3 finalizada';
+          this.output = 'Terceira série finalizada'; this.falar();
           this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoIntervalo - time });
           break;
         } 
         case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 3*this.tempoProva - 3*this.tempoIntervalo: { 
           this.whatcherSpliter.unsubscribe();
-          this.output = 'Série 4 iniciada';
+          this.output = 'Quarta série iniciada'; this.falar();
           this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoProva - time });
           break;
         }   
         case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 4*this.tempoProva - 3*this.tempoIntervalo: {
           this.whatcherSpliter.unsubscribe(); 
-          this.output = this.texto[3]; // prova encerrada, armas em segurança
+          this.output = this.texto[3]; this.falar();
           this.status = 'prova-finalizada';
           this.whatcher.unsubscribe(); 
           this.split = 0;           
@@ -214,5 +215,13 @@ export class StimerDuelo20sComponent implements OnInit {
     this.whatcher.unsubscribe();
     this.split = 0;
     this.interativo = true;
+  }
+
+  falar() {
+    let audio = new SpeechSynthesisUtterance(this.output);
+    audio.pitch = 1.0;
+    audio.rate = 2.0;
+    audio.lang = 'pt-BR';
+    speechSynthesis.speak(audio);
   }
 }
