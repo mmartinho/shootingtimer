@@ -227,7 +227,7 @@ export class StimerDuelo20sComponent implements OnInit {
 
   apitar() {
     let audio = new Audio();
-    audio.src = "../../assets/mp3/apito.mp3";
+    audio.src = "assets/mp3/apito.mp3";
     audio.load();
     audio.play();
   }
