@@ -149,54 +149,86 @@ export class StimerDuelo20sComponent implements OnInit {
         } 
         case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao: {
           this.whatcherSpliter.unsubscribe();
-          this.output = 'Primeira série iniciada'; this.apitar(); this.falar();
+          this.apitar(); 
           this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoProva - time });
           break;
-        }          
+        }
+        case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 2 : {
+          this.output = 'Primeira série iniciada'; this.falar();
+          break;
+        }
         case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 1*this.tempoProva: {
           this.whatcherSpliter.unsubscribe();
-          this.output = 'Primeira série finalizada'; this.apitar(); this.falar();
+          this.apitar(); 
           this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoIntervalo - time });
           break;
         }
+        case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 1*this.tempoProva - 2: {
+          this.output = 'Primeira série finalizada'; this.falar();
+          break;
+        }        
         case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 1*this.tempoProva - 1*this.tempoIntervalo: {
           this.whatcherSpliter.unsubscribe(); 
-          this.output = 'Segunda série iniciada'; this.apitar(); this.falar();
+          this.apitar();
           this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoProva - time });
           break;
         }
+        case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 1*this.tempoProva - 1*this.tempoIntervalo -2: {
+          this.output = 'Segunda série iniciada'; this.falar();
+          break;
+        }        
         case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 2*this.tempoProva - 1*this.tempoIntervalo: {
           this.whatcherSpliter.unsubscribe(); 
-          this.output = 'Segunda série finalizada'; this.apitar(); this.falar();
+          this.apitar(); 
           this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoIntervalo - time });
           break;
         } 
+        case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 2*this.tempoProva - 1*this.tempoIntervalo - 2: {
+          this.output = 'Segunda série finalizada';  this.falar();
+          break;
+        }         
         case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 2*this.tempoProva - 2*this.tempoIntervalo: { 
           this.whatcherSpliter.unsubscribe();
-          this.output = 'Terceira série iniciada'; this.apitar(); this.falar();
+          this.apitar();
           this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoProva - time });
           break;
         }  
+        case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 2*this.tempoProva - 2*this.tempoIntervalo - 2: { 
+          this.output = 'Terceira série iniciada'; this.falar();
+          break;
+        }         
         case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 3*this.tempoProva - 2*this.tempoIntervalo: {
           this.whatcherSpliter.unsubscribe();
-          this.output = 'Terceira série finalizada'; this.apitar(); this.falar();
+          this.apitar();
           this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoIntervalo - time });
           break;
         } 
+        case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 3*this.tempoProva - 2*this.tempoIntervalo - 2: {
+          this.output = 'Terceira série finalizada'; this.falar();
+          break;
+        }         
         case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 3*this.tempoProva - 3*this.tempoIntervalo: { 
           this.whatcherSpliter.unsubscribe();
-          this.output = 'Quarta série iniciada'; this.apitar(); this.falar();
+          this.apitar();
           this.whatcherSpliter = this.timeSpliter.subscribe(time => { this.split = this.tempoProva - time });
           break;
         }   
+        case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 3*this.tempoProva - 3*this.tempoIntervalo - 2: { 
+          this.output = 'Quarta série iniciada'; this.falar();
+          break;
+        }        
         case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 4*this.tempoProva - 3*this.tempoIntervalo: {
           this.whatcherSpliter.unsubscribe(); 
-          this.output = this.texto[3]; this.apitar(); this.falar();
-          this.status = 'prova-finalizada';
-          this.whatcher.unsubscribe(); 
-          this.split = 0;           
+          this.apitar(); 
+          this.status = 'prova-finalizada';    
           break;
         }
+        case this.tempoTotal - this.tempoPreparacao - this.tempoAtencao - 4*this.tempoProva - 3*this.tempoIntervalo - 2: {
+          this.output = this.texto[3]; this.falar(); 
+          this.whatcher.unsubscribe(); 
+          this.split = 0;          
+          break;
+        }        
         case 0 : {
           break;
         }                                              

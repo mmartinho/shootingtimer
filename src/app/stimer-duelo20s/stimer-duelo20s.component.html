@@ -68,8 +68,14 @@
     </div>
     <br />
 </ng-container>
-
 <ng-template #iniciadoBlock>
+    <section>
+        <div class="button-container">
+            <button mat-raised-button color="warn" (click)="apitar()">
+                Apitar
+            </button>            
+        </div>
+    </section>
     <ng-container *ngIf="interativo; else automaticoBlock">
         <section>   
             <div class="button-container">
@@ -121,11 +127,4 @@
         <p *ngIf="status!=''">Parar tudo e reiniciar: Pressione o Botão Salmão</p>
     </section>       
 </ng-template>
-
-<ng-container>
-    <div class="float-center">
-        <button mat-raised-button color="warn" (click)="apitar()">Apitar</button>
-    </div>
-</ng-container>
-
 
