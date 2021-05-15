@@ -13,15 +13,7 @@
 .float-right {
     position: fixed;
     bottom: 2rem;
-    right: 10rem;
-    width: 1.5em;
-    height: 1.5em;
-}
-
-.float-left {
-    position: fixed;
-    bottom: 2rem;
-    right: 24rem;
+    right: 9rem;
     width: 1.5em;
     height: 1.5em;
 }
@@ -29,7 +21,16 @@
 .float-center {
     position: fixed;
     bottom: 2rem;
-    right: 15rem;
+    right: 14rem;
     width: 1.5em;
     height: 1.5em;
 }
+
+.float-left {
+    position: fixed;
+    bottom: 2rem;
+    right: 23rem;
+    width: 1.5em;
+    height: 1.5em;
+}
+
