@@ -1,16 +1,21 @@
 <ng-container *ngIf="status==''; else iniciadoBlock">
     <h1>I - Finalidade</h1>
 
-    <p>Regulamentar a prova de Duelo 20 Segundos no âmbito da Confederação Brasileira de Tiro Esportivo e de suas Filiadas.</p>
+    <p>
+        Regulamentar a prova de Duelo 20 Segundos 10m no âmbito da Confederação Brasileira de Tiro Esportivo e de suas
+        Filiadas. Esta prova visa atender necessidades de clubes que não dispõe de pistas de 25m ou mais, via de regra indoor,
+        situados nos grandes centros.
+    </p>
+    <p>Esta prova NÃO INTEGRA o rol de disciplinas do Campeonato Brasileiro de Carabina, Pistola e Rifle.</p>
 
     <h1>II - Descrição da Prova</h1>
 
     <ul>
         <li>Distância<br/>
-            25 (Vinte e cinco) metros.
+            10 (dez) metros.
         </li>
         <li>Alvo<br/>
-            De Tiro Rápido com uma obréia branca de 5 (cinco) cm de diâmetro no centro.
+            De Pistola de Precisão.
         </li>
         <li> 
             Posição<br/>
@@ -26,7 +31,12 @@
         </li>
         <li>
             Prova<br/>
-            20 (vinte) disparos distribuídos em 4 (quatro) séries de 20 (vinte) segundos.
+            10 (dez) disparos distribuídos em 2 (duas) séries de 20 (vinte) segundos.
+        </li>
+
+        <li>
+            Pontuação Especial<br/>
+            Os tiros que atingirem o centro olímpico (X) terão o valor de 12 (doze) pontos.
         </li>
 
         <li>
@@ -94,6 +104,5 @@
     <mat-divider></mat-divider>
     <section>
         <p *ngIf="status!=''">Parar tudo e reiniciar: Pressione o Botão Salmão</p>
-    </section>      
+    </section>     
 </ng-template>
-

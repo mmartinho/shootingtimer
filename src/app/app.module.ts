@@ -19,6 +19,7 @@ import { StimerDuelo20sComponent } from './stimer-duelo20s/stimer-duelo20s.compo
 import { StimerPageNotFoundComponent } from './stimer-page-not-found/stimer-page-not-found.component';
 import { StimerAboutComponent } from './stimer-about/stimer-about.component';
 import { environment } from '../environments/environment';
+import { StimerDuelo20s10mComponent } from './stimer-duelo20s10m/stimer-duelo20s10m.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { environment } from '../environments/environment';
     StimerInitialComponent,
     StimerDuelo20sComponent,
     StimerPageNotFoundComponent,
-    StimerAboutComponent
+    StimerAboutComponent,
+    StimerDuelo20s10mComponent
   ],
   imports: [
     BrowserModule,
