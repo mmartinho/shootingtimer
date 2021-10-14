@@ -10,10 +10,18 @@
     font-size: xx-large;
 }
 
-.float-right {
+.fixed-right {
     position: fixed;
-    bottom: 2rem;
-    right: 5rem;
-    width: 1.5em;
-    height: 1.5em;
+    bottom: 3em;
+    right: 3em;
+    width: auto;
+    border: 1px solid #1b1b1b;
+    background-color: white;
+    .some-inside-padding {
+        padding: 0.2em;
+    }
+    .text-bold {
+        text-align: center; 
+        font-weight: bold;
+    }
 }

@@ -1,0 +1,25 @@
+<!-- Versão do template com "input radio" -->
+
+<div class="button-group" role="radiogroup" [attr.aria-lable]="label">
+  <label>{{ label }}</label>
+  <div class="radio">
+    <input
+      [attr.id]="id + '-yes'"
+      type="radio"
+      [attr.name]="id"
+      [attr.checked]="value === options.YES"
+      (change)="activate(options.YES)"
+    />
+    <label [attr.for]="id + '-yes'" class="button button-yes"> Sim </label>
+  </div>
+  <div class="radio">
+    <input
+      [attr.id]="id + '-no'"
+      type="radio"
+      [attr.name]="id"
+      [attr.checked]="value === options.NO"
+      (change)="activate(options.NO)"
+    />
+    <label [attr.for]="id + '-no'" class="button button-no"> Não </label>
+  </div>  
+</div>

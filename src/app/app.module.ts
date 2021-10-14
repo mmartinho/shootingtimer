@@ -20,6 +20,8 @@ import { StimerPageNotFoundComponent } from './stimer-page-not-found/stimer-page
 import { StimerAboutComponent } from './stimer-about/stimer-about.component';
 import { environment } from '../environments/environment';
 import { StimerDuelo20s10mComponent } from './stimer-duelo20s10m/stimer-duelo20s10m.component';
+import { YesNoButtonGroupModule } from './shared/components/yes-no-button-group/yes-no-button-group.module';
+import { StimerDueloComponent } from './stimer-classes/stimer-duelo.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { StimerDuelo20s10mComponent } from './stimer-duelo20s10m/stimer-duelo20s
     StimerDuelo20sComponent,
     StimerPageNotFoundComponent,
     StimerAboutComponent,
-    StimerDuelo20s10mComponent
+    StimerDuelo20s10mComponent,
+    StimerDueloComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import { StimerDuelo20s10mComponent } from './stimer-duelo20s10m/stimer-duelo20s
     MatListModule,
     MatCardModule,
     MatDialogModule,
+    YesNoButtonGroupModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
