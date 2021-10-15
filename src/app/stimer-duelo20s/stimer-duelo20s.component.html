@@ -60,10 +60,35 @@
             </ul>
         </li>   
     </ul>
-    <div class="float-right">
-        <button mat-raised-button color="accent" (click)="iniciar()">Iniciar</button>
-    </div>
-    <br />
+</ng-container>
+<ng-container *ngIf="status==''">
+    <div class="fixed-right">
+        <div class="text-bold">Funções "Luís"</div>
+        <mat-divider></mat-divider>
+        <div class="some-inside-padding">
+            <div>
+                <app-yes-no-button-group 
+                    label="Preparação Reduzida?"
+                    (valueChange)="onChangePreparacao($event)"
+                ></app-yes-no-button-group>
+            </div>       
+            <div>
+                <app-yes-no-button-group 
+                    label="Intervalo Reduzido?"
+                    (valueChange)="onChangeIntervalo($event)"
+                >
+                </app-yes-no-button-group>                
+            </div>
+            <div>
+                <button mat-raised-button 
+                    color="accent" 
+                    (click)="iniciar()"
+                >
+                    Iniciar
+                </button>
+            </div>
+        </div>
+    </div>    
 </ng-container>
 <ng-template #iniciadoBlock>
     <section>
