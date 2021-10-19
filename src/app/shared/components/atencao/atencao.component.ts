@@ -17,7 +17,7 @@ export class AtencaoComponent implements OnInit {
 
   /** */
   posicaoGif() {
-    const path = '/assets/gifs/';
+    const path = 'assets/gifs/';
     switch(this.status) {
       case 'Atenção!' : return path+'posicao_45_graus.gif';
       case 'Primeira série iniciada' :
