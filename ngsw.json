@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1634653569854,
+  "timestamp": 1634654036950,
   "index": "https://mmartinho.github.io/shootingtimer/index.html",
   "assetGroups": [
     {
@@ -13,8 +13,8 @@
       "urls": [
         "https://mmartinho.github.io/shootingtimer/favicon.ico",
         "https://mmartinho.github.io/shootingtimer/index.html",
-        "https://mmartinho.github.io/shootingtimer/main-es2015.c0b927e75699d107633f.js",
-        "https://mmartinho.github.io/shootingtimer/main-es5.c0b927e75699d107633f.js",
+        "https://mmartinho.github.io/shootingtimer/main-es2015.cd689dea8b0c3fdaaf88.js",
+        "https://mmartinho.github.io/shootingtimer/main-es5.cd689dea8b0c3fdaaf88.js",
         "https://mmartinho.github.io/shootingtimer/manifest.webmanifest",
         "https://mmartinho.github.io/shootingtimer/polyfills-es2015.24ea368e110f7f07889e.js",
         "https://mmartinho.github.io/shootingtimer/polyfills-es5.8139562032f54e8f194a.js",
@@ -65,9 +65,9 @@
     "https://mmartinho.github.io/shootingtimer/assets/icons/icon-96x96.png": "9c6bea7b07b0a15c0b3e90dca57961c2ef528377",
     "https://mmartinho.github.io/shootingtimer/assets/mp3/apito.mp3": "4de9c4a05e489084b3e1bb2cc7c81b75dbf12805",
     "https://mmartinho.github.io/shootingtimer/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://mmartinho.github.io/shootingtimer/index.html": "5379004184e849a5b2614ce688ec8df0e842531e",
-    "https://mmartinho.github.io/shootingtimer/main-es2015.c0b927e75699d107633f.js": "479bc650a00b53ecc07b6ab46a21f2a077891393",
-    "https://mmartinho.github.io/shootingtimer/main-es5.c0b927e75699d107633f.js": "a80d3d6ce6c415deba69bb7cf43fe395d50b949d",
+    "https://mmartinho.github.io/shootingtimer/index.html": "2317d631ad0422e94838a28e646840131f719ecd",
+    "https://mmartinho.github.io/shootingtimer/main-es2015.cd689dea8b0c3fdaaf88.js": "5ebf5aad77f9352b168dbd862e4e507fb2da0ffa",
+    "https://mmartinho.github.io/shootingtimer/main-es5.cd689dea8b0c3fdaaf88.js": "545b6db86e7167fffef7187f71dc206506d070ca",
     "https://mmartinho.github.io/shootingtimer/manifest.webmanifest": "52076a4cd15b587989d8d62d027d3294fed44932",
     "https://mmartinho.github.io/shootingtimer/polyfills-es2015.24ea368e110f7f07889e.js": "65c537467564ee0ba776b629f71ed3413413a7cb",
     "https://mmartinho.github.io/shootingtimer/polyfills-es5.8139562032f54e8f194a.js": "0ed742b231dbb250b9dd34cadbe60ae6455ff5ca",
