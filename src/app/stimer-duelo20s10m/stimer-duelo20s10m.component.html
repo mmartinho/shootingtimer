@@ -120,7 +120,11 @@
     <section>    
         <h2>{{output}}</h2>
     </section>
-    <mat-divider></mat-divider>
+    <mat-divider></mat-divider> 
+    <section>    
+        <app-atencao [status]="output"></app-atencao>
+    </section>
+    <mat-divider></mat-divider>    
     <section>
         <div class="button-container">
             <button mat-raised-button color="accent" (click)="parar()" *ngIf="status!=''">Parar</button>

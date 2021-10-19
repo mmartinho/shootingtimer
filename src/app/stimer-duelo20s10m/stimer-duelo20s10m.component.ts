@@ -56,7 +56,6 @@ export class StimerDuelo20s10mComponent extends StimerDueloComponent {
         /** Apito de início da primeira série */
         case this.tempoTotal - tempoPreparacao - this.tempoAtencao : {
           this.splitStop();
-          this.status = 'primeira';
           this.apitar(); 
           this.splitStartFrom(this.tempoProva);
           break;

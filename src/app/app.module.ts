@@ -22,6 +22,7 @@ import { environment } from '../environments/environment';
 import { StimerDuelo20s10mComponent } from './stimer-duelo20s10m/stimer-duelo20s10m.component';
 import { YesNoButtonGroupModule } from './shared/components/yes-no-button-group/yes-no-button-group.module';
 import { StimerDueloComponent } from './stimer-classes/stimer-duelo.component';
+import { AtencaoComponent } from './shared/components/atencao/atencao.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { StimerDueloComponent } from './stimer-classes/stimer-duelo.component';
     StimerPageNotFoundComponent,
     StimerAboutComponent,
     StimerDuelo20s10mComponent,
-    StimerDueloComponent
+    StimerDueloComponent,
+    AtencaoComponent
   ],
   imports: [
     BrowserModule,
