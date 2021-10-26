@@ -5,7 +5,6 @@ import {
   HostListener,
   QueryList,
 } from '@angular/core';
-import { NEVER, never } from 'rxjs';
 
 enum ArrowDirection {
   LEFT = -1,
@@ -19,7 +18,7 @@ export class KeyboardManagerDirective {
   constructor() {}
 
   @ContentChildren(KeyboardManagedItemDirective)
-  public items: QueryList<KeyboardManagedItemDirective> = new QueryList();
+  public items: QueryList<KeyboardManagedItemDirective> = null;
 
   /**
    * @param event

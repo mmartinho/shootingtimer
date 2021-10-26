@@ -76,29 +76,28 @@
         <div class="text-bold">Funções "Luís"</div>
         <mat-divider></mat-divider>
         <div class="some-inside-padding">
-            <div>
-                <app-yes-no-button-group 
-                    label="Preparação Reduzida?"
-                    (valueChange)="onChangePreparacao($event)"
-                ></app-yes-no-button-group>
-            </div>       
-            <div>
-                <app-yes-no-button-group 
-                    label="Intervalo Reduzido?"
-                    (valueChange)="onChangeIntervalo($event)"
-                >
-                </app-yes-no-button-group>                
-            </div>
-            <div>
-                <button mat-raised-button 
-                    color="accent" 
-                    (click)="iniciar()"
-                >
-                    Iniciar
-                </button>
-            </div>
+            <form [formGroup]="form" (ngSubmit)="salvar()">
+                <div>
+                    <app-yes-no-button-group
+                        label="Preparação Reduzida?"
+                        formControlName="yesNoAnswerPreparacaoReduzida" 
+                    ></app-yes-no-button-group>
+                </div>       
+                <div>
+                    <app-yes-no-button-group 
+                        label="Intervalo Reduzido?"
+                        formControlName="yesNoAnswerIntervaloReduzido"
+                    ></app-yes-no-button-group>                
+                </div>
+                <button mat-raised-button color="primary">Salvar</button>
+            </form>
         </div>
-    </div>    
+    </div>
+    <div class="fixed-top-right">
+        <button mat-fab color="accent" (click)="iniciar()">
+            Iniciar
+        </button>
+    </div>          
 </ng-container>
 <ng-template #iniciadoBlock>
     <section>
