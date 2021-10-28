@@ -11,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { StimerDuelo20s10mComponent } from './stimer-duelo20s10m/stimer-duelo20s
 import { YesNoButtonGroupModule } from './shared/components/yes-no-button-group/yes-no-button-group.module';
 import { StimerDueloComponent } from './stimer-classes/stimer-duelo.component';
 import { AtencaoComponent } from './shared/components/atencao/atencao.component';
+import { FlashModule } from './shared/components/flash/flash.module';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,7 @@ import { AtencaoComponent } from './shared/components/atencao/atencao.component'
     ReactiveFormsModule,
     FormsModule,
     MatToolbarModule,
+    MatTooltipModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
@@ -52,6 +55,7 @@ import { AtencaoComponent } from './shared/components/atencao/atencao.component'
     MatCardModule,
     MatDialogModule,
     YesNoButtonGroupModule,
+    FlashModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable

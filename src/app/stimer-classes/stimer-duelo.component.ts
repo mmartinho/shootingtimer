@@ -1,6 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Observable, Subscription, timer } from 'rxjs';
+import { Observable, Subject, Subscription, timer } from 'rxjs';
 
 import { StorageTimerService } from '../shared/services/data/storage-timer.service';
 
@@ -89,8 +89,14 @@ export class StimerDueloComponent implements OnInit, OnDestroy {
     /** Formulário de controle das funções "Luís" */
     form: FormGroup;
 
+    /** Mensagem qualquer */
+    transmissor: Subject<string> = new Subject();
+
     /** */
-    constructor(timerStorageService: StorageTimerService, formBuilder: FormBuilder) {
+    constructor(
+        timerStorageService: StorageTimerService, 
+        formBuilder: FormBuilder) 
+    {
         this.timerStorageService = timerStorageService;
         this.form = formBuilder.group({
             yesNoAnswerIntervaloReduzido: [{
@@ -101,7 +107,7 @@ export class StimerDueloComponent implements OnInit, OnDestroy {
                 value: 'no',
                 disabled: false
             }],            
-        });        
+        });    
     }
 
     /** 
@@ -342,7 +348,8 @@ export class StimerDueloComponent implements OnInit, OnDestroy {
         const intervaloReduzido = this.form.controls['yesNoAnswerIntervaloReduzido'].value;
         const preparacaoReduzida = this.form.controls['yesNoAnswerPreparacaoReduzida'].value;
         this.mudarPreparacao(preparacaoReduzida);
-        this.mudarIntervalo(intervaloReduzido)
+        this.mudarIntervalo(intervaloReduzido);
+        this.mandarMensagem('Configurações salvas no dispositivo local');
     }
 
     /**
@@ -376,4 +383,13 @@ export class StimerDueloComponent implements OnInit, OnDestroy {
         }
         this.form.controls['yesNoAnswerIntervaloReduzido'].setValue(valor);
     }    
+
+    /**
+     * Manda mensagem para o componente que 
+     * subscreveu o texto
+     * @param texto 
+     */
+    mandarMensagem(texto: string) {
+        this.transmissor.next(texto);
+    }
 }

@@ -79,7 +79,12 @@
                         label="Intervalo Reduzido?"
                     ></app-yes-no-button-group>                
                 </div>
-                <button mat-raised-button color="primary">Salvar</button>
+                <button mat-raised-button 
+                        color="primary" 
+                        matTooltip="Salva configuração no dispositivo">
+                    Salvar
+                </button>
+                <app-flash [receptor]="transmissor"></app-flash>
             </form>
         </div>
     </div>
@@ -87,7 +92,7 @@
         <button mat-fab color="accent" (click)="iniciar()">
             Iniciar
         </button>
-    </div>    
+    </div>   
 </ng-container>
 <ng-template #iniciadoBlock>
     <section>
@@ -122,6 +127,6 @@
     <mat-divider></mat-divider>
     <section>
         <p *ngIf="status!=''">Parar tudo e reiniciar: Pressione o Botão Salmão</p>
-    </section>      
+    </section>     
 </ng-template>
 

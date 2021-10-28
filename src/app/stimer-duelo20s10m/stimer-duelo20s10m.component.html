@@ -76,7 +76,7 @@
         <div class="text-bold">Funções "Luís"</div>
         <mat-divider></mat-divider>
         <div class="some-inside-padding">
-            <form [formGroup]="form" (ngSubmit)="salvar()">
+            <form [formGroup]="form" (ngSubmit)="salvar();">
                 <div>
                     <app-yes-no-button-group
                         label="Preparação Reduzida?"
@@ -89,7 +89,12 @@
                         formControlName="yesNoAnswerIntervaloReduzido"
                     ></app-yes-no-button-group>                
                 </div>
-                <button mat-raised-button color="primary">Salvar</button>
+                <button mat-raised-button 
+                        color="primary"
+                        matTooltip="Salva configuração no dispositivo">
+                    Salvar
+                </button>
+                <app-flash [receptor]="transmissor"></app-flash>
             </form>
         </div>
     </div>

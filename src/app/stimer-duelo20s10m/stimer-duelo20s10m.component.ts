@@ -12,7 +12,10 @@ import { StimerDueloComponent } from '../stimer-classes/stimer-duelo.component';
 export class StimerDuelo20s10mComponent extends StimerDueloComponent {
   
   /** */
-  constructor(public timerStorageService: StorageTimerService, public formBuilder: FormBuilder) {
+  constructor(
+    public timerStorageService: StorageTimerService, 
+    public formBuilder: FormBuilder) 
+  {
     super(timerStorageService, formBuilder);
     this.timerStorageService.from = 'duelo20s10m';
   }
