@@ -151,8 +151,10 @@ export class StimerDueloComponent implements OnInit, OnDestroy {
             case 'quarta' :
                 this.tempoOffset = this.tempoAtencaoInicioQuartaSerie() + 1;
             break;                       
-            default: 
+            default: {
+                this.status = ''; // ignora o que foi lido e zera
                 this.tempoOffset = this.tempoTotal;
+            }
         }         
     }
 
@@ -312,13 +314,11 @@ export class StimerDueloComponent implements OnInit, OnDestroy {
     /** */
     parar() {
         this.splitStop();
-        //this.tempoPreparacaoReduzido = 0;
-        //this.tempoIntervaloReduzido = 0;
         this.tempoTotal = 0;
         this.output = '';
         this.status = '';
-        this.whatcher.unsubscribe();
-        this.timerStorageService.removeStatus();
+        this.whatcher?.unsubscribe();
+        this.timerStorageService?.removeStatus();
         this.timerInit();
     } 
     

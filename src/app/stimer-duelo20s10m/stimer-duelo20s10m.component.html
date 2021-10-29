@@ -1,6 +1,6 @@
+<h1 class="titulo">DUELO 20s 10m</h1>
 <ng-container *ngIf="status==''; else iniciadoBlock">
     <h1>I - Finalidade</h1>
-
     <p>
         Regulamentar a prova de Duelo 20 Segundos 10m no âmbito da Confederação Brasileira de Tiro Esportivo e de suas
         Filiadas. Esta prova visa atender necessidades de clubes que não dispõe de pistas de 25m ou mais, via de regra indoor,
@@ -104,15 +104,7 @@
         </button>
     </div>          
 </ng-container>
-<ng-template #iniciadoBlock>
-    <section>
-        <div class="button-container">
-            <button mat-raised-button color="warn" (click)="apitar()">
-                Apitar
-            </button>            
-        </div>
-    </section>
-    <mat-divider></mat-divider> 
+<ng-template #iniciadoBlock> 
     <section>   
         <div class="button-container">
             <button mat-fab color="warn" aria-label="Contagem">
@@ -122,7 +114,7 @@
     </section>     
     <mat-divider></mat-divider>   
     <section>    
-        <h2>{{output}}</h2>
+        <p>{{output}}</p>
     </section>
     <mat-divider></mat-divider> 
     <section>    
@@ -131,7 +123,13 @@
     <mat-divider></mat-divider>    
     <section>
         <div class="button-container">
-            <button mat-raised-button color="accent" (click)="parar()" *ngIf="status!=''">Parar</button>
+            <button mat-raised-button color="accent" (click)="parar()" *ngIf="status!=''">
+                Parar
+            </button>
+            &nbsp;
+            <button mat-raised-button color="primary" (click)="apitar()">
+                Apitar
+            </button>             
         </div>
     </section> 
     <mat-divider></mat-divider>
