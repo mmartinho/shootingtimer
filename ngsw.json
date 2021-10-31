@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1635511473670,
+  "timestamp": 1635690265962,
   "index": "https://mmartinho.github.io/shootingtimer/index.html",
   "assetGroups": [
     {
@@ -13,8 +13,8 @@
       "urls": [
         "https://mmartinho.github.io/shootingtimer/favicon.ico",
         "https://mmartinho.github.io/shootingtimer/index.html",
-        "https://mmartinho.github.io/shootingtimer/main-es2015.da4f0c0b73df50519c03.js",
-        "https://mmartinho.github.io/shootingtimer/main-es5.da4f0c0b73df50519c03.js",
+        "https://mmartinho.github.io/shootingtimer/main-es2015.e304a882bd89fe9d7d4a.js",
+        "https://mmartinho.github.io/shootingtimer/main-es5.e304a882bd89fe9d7d4a.js",
         "https://mmartinho.github.io/shootingtimer/manifest.webmanifest",
         "https://mmartinho.github.io/shootingtimer/polyfills-es2015.24ea368e110f7f07889e.js",
         "https://mmartinho.github.io/shootingtimer/polyfills-es5.8139562032f54e8f194a.js",
@@ -51,9 +51,9 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://mmartinho.github.io/shootingtimer/assets/gifs/posicao_45_graus.gif": "9f304e07cef6353125ab9e3a7db9ba7eacfda2c3",
-    "https://mmartinho.github.io/shootingtimer/assets/gifs/posicao_preparacao.gif": "4404c64e808614116cf3f5452ef3e4e95a6d2a61",
-    "https://mmartinho.github.io/shootingtimer/assets/gifs/posicao_tiro.gif": "b27c2222bf3aa9d0e70dc1f446fc442ab2584202",
+    "https://mmartinho.github.io/shootingtimer/assets/gifs/posicao_45_graus.gif": "c29b36232d50c689028b18d682fe1f2db00ce972",
+    "https://mmartinho.github.io/shootingtimer/assets/gifs/posicao_preparacao.gif": "dc57ae1d17a89ae966612d7b852b2ca9446fa756",
+    "https://mmartinho.github.io/shootingtimer/assets/gifs/posicao_tiro.gif": "a4a2a42db4f942857a9bd631f70016777f148e55",
     "https://mmartinho.github.io/shootingtimer/assets/gifs/safety_flag.jpg": "4f27a6977c24f1647cc3426747ce32ef6a5090d2",
     "https://mmartinho.github.io/shootingtimer/assets/icons/icon-128x128.png": "9ecfc146b3f651e7fad8f57f2d1b9a395783aa09",
     "https://mmartinho.github.io/shootingtimer/assets/icons/icon-144x144.png": "9b5e871f370fbd1cea2efd1b977617e0027bf105",
@@ -65,9 +65,9 @@
     "https://mmartinho.github.io/shootingtimer/assets/icons/icon-96x96.png": "9c6bea7b07b0a15c0b3e90dca57961c2ef528377",
     "https://mmartinho.github.io/shootingtimer/assets/mp3/apito.mp3": "4de9c4a05e489084b3e1bb2cc7c81b75dbf12805",
     "https://mmartinho.github.io/shootingtimer/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://mmartinho.github.io/shootingtimer/index.html": "f971c07759fdabe3c2f12a1d717fc94a90b12d22",
-    "https://mmartinho.github.io/shootingtimer/main-es2015.da4f0c0b73df50519c03.js": "72549f9e93111b09b85b75d3a0542eb3c414bd9b",
-    "https://mmartinho.github.io/shootingtimer/main-es5.da4f0c0b73df50519c03.js": "9631fecff6aec1367d3ab569f8a52a6c6958239a",
+    "https://mmartinho.github.io/shootingtimer/index.html": "1457a95ae2d69fa449b25239c949ee984b994b30",
+    "https://mmartinho.github.io/shootingtimer/main-es2015.e304a882bd89fe9d7d4a.js": "0e2f890f4cef8accfbf52d24d3c4755c33b0e30c",
+    "https://mmartinho.github.io/shootingtimer/main-es5.e304a882bd89fe9d7d4a.js": "b420e3726590a1aa973a48b6e6b11f2210fe9232",
     "https://mmartinho.github.io/shootingtimer/manifest.webmanifest": "52076a4cd15b587989d8d62d027d3294fed44932",
     "https://mmartinho.github.io/shootingtimer/polyfills-es2015.24ea368e110f7f07889e.js": "65c537467564ee0ba776b629f71ed3413413a7cb",
     "https://mmartinho.github.io/shootingtimer/polyfills-es5.8139562032f54e8f194a.js": "0ed742b231dbb250b9dd34cadbe60ae6455ff5ca",
