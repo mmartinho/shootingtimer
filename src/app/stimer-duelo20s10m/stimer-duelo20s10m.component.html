@@ -117,23 +117,28 @@
         <p>{{output}}</p>
     </section>
     <mat-divider></mat-divider> 
-    <section>    
-        <app-atencao [status]="output"></app-atencao>
-    </section>
-    <mat-divider></mat-divider>    
-    <section>
-        <div class="button-container">
-            <button mat-raised-button color="accent" (click)="parar()" *ngIf="status!=''">
-                Parar
-            </button>
-            &nbsp;
-            <button mat-raised-button color="primary" (click)="apitar()">
-                Apitar
-            </button>             
-        </div>
-    </section> 
-    <mat-divider></mat-divider>
-    <section>
-        <p *ngIf="status!=''">Parar tudo e reiniciar: Pressione o Botão Salmão</p>
-    </section>       
+    <section> 
+        <div class="row">
+            <div class="animation">   
+                <app-atencao [status]="output"></app-atencao>   
+            </div>
+            <div class="actions">
+                <div class="button-container">
+                    <button mat-raised-button color="accent" (click)="parar()" *ngIf="status!=''">
+                        Parar
+                    </button>
+                    &nbsp;
+                    <button mat-raised-button color="primary" (click)="apitar()">
+                        Apitar
+                    </button>             
+                </div>
+            </div>
+        </div>    
+        <div class="row">   
+            <div class="instructions">
+                <mat-divider></mat-divider>
+                <p *ngIf="status!=''">Parar tudo e reiniciar: Pressione o Botão Salmão</p>
+            </div>       
+        </div> 
+    </section>         
 </ng-template>

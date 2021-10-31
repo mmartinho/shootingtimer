@@ -37,7 +37,7 @@ export class StimerDueloComponent implements OnInit, OnDestroy {
         'Seu tempo de 1 minuto de preparação começa a partir de agora',
         'Para a primeira série, carregar',
         'Atenção!',
-        'Prova encerrada - armas em segurança'
+        'Prova encerrada: armas em segurança'
     ];
 
     // ------- Tempos inteiros em segundos ----------

@@ -38,3 +38,19 @@
     right: 3em;
 }
 
+.row {
+    width: 100%;
+    display: inline-block;
+    .animation {
+        width: 50%;
+        float: left;
+    }
+    .actions {
+        width: 50%;
+        float: right;
+    } 
+    .instructions {
+        width: 100%;
+    }    
+}
+
