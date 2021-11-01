@@ -6,15 +6,16 @@ import { Component } from '@angular/core';
     styleUrls: ['./stimer-initial.component.scss']
   })
   export class StimerInitialComponent {
-    
     texto:string = '';
 
-    constructor(
-      
-    ) {}
+    /** */
+    constructor() {}
 
-    naoFazNadaNao() {
-      this.texto = 'Faz nada não, meu querido, é só um demo';
+    /**
+     * 
+     */
+    emConstrucao() {
+      this.texto = 
+        'EM CONSTRUÇÃO. Utilize o menu do canto superior esquerdo para acessar as disciplinas';
     }
-  
   }
