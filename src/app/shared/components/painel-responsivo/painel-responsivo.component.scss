@@ -1,0 +1,38 @@
+/** Evita que as imagens estourem os elementos que as contém */
+img {
+    max-width: 100%;
+}
+
+/** Container das seções centralizado com máximo de 1200px */
+.geral {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/** Seção de 100% do elemento pai */
+.secao {
+    float: left;
+    width: 100%;  
+}
+
+/** 3 seções, quando largura for > 1000px */
+@media (min-width: 1000px) {     
+    .secao {
+        width: 33.333%;          
+    }    
+    .secao > span {
+        font-size: 1.5em !important;
+    }    
+}
+
+/** 2 seções, quando largura for > 600px*/
+@media (min-width: 600px) {
+    .secao {
+        width: 50%;             
+    } 
+    .secao > span {
+        font-size: 1.1em !important; 
+    }  
+}

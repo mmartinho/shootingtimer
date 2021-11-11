@@ -26,6 +26,7 @@ import { YesNoButtonGroupModule } from './shared/components/yes-no-button-group/
 import { StimerDueloComponent } from './stimer-classes/stimer-duelo.component';
 import { AtencaoComponent } from './shared/components/atencao/atencao.component';
 import { FlashModule } from './shared/components/flash/flash.module';
+import { PainelResponsivoModule } from './shared/components/painel-responsivo/painel-responsivo.module';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { FlashModule } from './shared/components/flash/flash.module';
     MatDialogModule,
     YesNoButtonGroupModule,
     FlashModule,
+    PainelResponsivoModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
